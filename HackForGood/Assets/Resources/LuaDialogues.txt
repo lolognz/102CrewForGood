@@ -1,0 +1,31 @@
+local conver = getvar(flowchart, "Stage")
+local c = conver.value
+
+if c == "stage" then --Dialog #1
+    -- Show escarlata's portrait, appearing on the left
+    stage.show(escarlata, "chicanormalhabla", "CustomLeft", "CustomLeft")
+
+    -- Show abuelo's portrait, appearing on the right
+    stage.show(abuelo, "abuelohabla", "CustomRight", "CustomRight")
+
+    --Dialog between escarlata and abuelo
+    conversation [[
+    escarlata: Hola abuelo
+    abuelo: Hola tesoro, gracias por venir.
+    escarlata: ¿Qué ocurre?
+    abuelo: Nada hija.
+    abuelo: Sólo que es duro envejecer.
+    abuelo: Y no poder recordar las cosas igual que antes.
+    escarlata: No te preocupes abuelo, yo te ayudaré.
+    abuelo: Pues métete en el libro y podrás ayudarme.
+    abuelo: A recordar todo aquello que una vez sucedió.
+    escarlata: ¿Meterme en el libro?
+    escarlata: ¡ooooh!
+    ]]
+
+    -- Hide Escarlata, moving to de left edge
+    stage.hide(escarlata, "CustomLeft")
+
+    -- Hide abuelo, moving to de right edge
+    stage.hide(abuelo, "CustomRight")
+end
